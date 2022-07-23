@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/revenge-for-you/static/css/main.bbcff6df.css",
+    "main.js": "/revenge-for-you/static/js/main.cf03ded1.js",
+    "static/js/787.2ca21fda.chunk.js": "/revenge-for-you/static/js/787.2ca21fda.chunk.js",
+    "static/media/MonsterBlood-VGKYz.ttf": "/revenge-for-you/static/media/MonsterBlood-VGKYz.feec82f0c0f0bfffd37c.ttf",
+    "index.html": "/revenge-for-you/index.html",
+    "main.bbcff6df.css.map": "/revenge-for-you/static/css/main.bbcff6df.css.map",
+    "main.cf03ded1.js.map": "/revenge-for-you/static/js/main.cf03ded1.js.map",
+    "787.2ca21fda.chunk.js.map": "/revenge-for-you/static/js/787.2ca21fda.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bbcff6df.css",
+    "static/js/main.cf03ded1.js"
+  ]
+}
