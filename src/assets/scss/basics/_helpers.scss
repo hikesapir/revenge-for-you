@@ -2,3 +2,13 @@
     color: $subtxt;
     font-size: 0.8em;
 }
+
+.danger-bgc {
+    background-color: $danger;
+    color: white;
+}
+
+.success-bgc {
+    background-color: $success;
+    color: white;
+}
