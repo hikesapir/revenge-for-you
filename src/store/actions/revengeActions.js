@@ -10,6 +10,18 @@ export function loadRevenges() {
 export function saveRevenge(revenge) {
     return (dispatch, getState) => {
         const savedRevenge = revengeService.save(revenge)
-        dispatch({type:'SAVE_REVENGE', savedRevenge})
+        console.log(revenge);
+        if (!revenge._id) {
+            dispatch({ type: 'ADD_REVENGE', savedRevenge })
+        } else {
+            dispatch({ type: 'UPDATE_REVENGE', savedRevenge })
+        }
+    }
+}
+
+export function removeRevenge(revengeId) {
+    return (dispatch, getState) => {
+        revengeService.remove(revengeId)
+        dispatch({ type: 'REMOVE_REVENGE', revengeId })
     }
 }

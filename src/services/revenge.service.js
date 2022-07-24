@@ -4,16 +4,17 @@ import { utilService } from "./util.service"
 export const revengeService = {
     getEmptyRevenge,
     query,
-    save
+    save,
+    remove
 }
 
 const STORAGE_KEY = 'revenges'
 
 const gDefaultRevenges = [
-    { _id: 'r2', description: 'Turn off the hot water ', to: 'galit', createdAt: 1658458939805, isDone: false },
+    { _id: 'r2', description: 'Turn off the hot water ', to: 'Galit', createdAt: 1658458939805, isDone: false },
     { _id: 'r3', description: 'Hide all of the toilet paper', to: 'Nofar', createdAt: 1658559985180, isDone: false },
     { _id: 'r1', description: 'Replace the salt pot with sugar', to: 'My boss', createdAt: 1658560059605, isDone: false },
-    { _id: 'r4', description: 'Change phone setting to Chinese', to: 'harel', createdAt: 1658560547273, isDone: false }
+    { _id: 'r4', description: 'Change phone setting to Chinese', to: 'Harel', createdAt: 1658560547273, isDone: false }
 ]
 
 var gRevenges = _loadRevenges()
@@ -22,9 +23,17 @@ function query() {
     return gRevenges
 }
 
+function remove(id) {
+    const idx = gRevenges.findIndex(revenge => revenge._id === id)
+    gRevenges.splice(idx, 1)
+    // if (!gRevenges.length) gRevenges = gDefaultRevenges.slice()
+    storageService.store(STORAGE_KEY, gRevenges)
+}
+
 function save(revengeToSave) {
     if (revengeToSave._id) {
         const idx = gRevenges.findIndex(revenge => revenge._id === revengeToSave._id)
+        console.log(revengeToSave);
         gRevenges.splice(idx, 1, revengeToSave)
     } else {
         revengeToSave._id = utilService.makeId()
