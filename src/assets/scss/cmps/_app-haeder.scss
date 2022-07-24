@@ -1,0 +1,28 @@
+.app-header {
+    margin: 0 30px;
+    padding: 5px 0;
+    display: flex;
+    justify-content: space-between;
+
+    .logo {
+        font-family: monster-blood;
+        font-size: 16px;
+        font-weight: 400;
+        color: $logo;
+        letter-spacing: 3px;
+
+    }
+
+    @media (min-width:370px) {
+        .logo {
+            font-weight: 600;
+            font-size: 20px;
+        }
+    }
+    
+    @media (min-width:500px) {
+        .logo {
+            font-size: 28px;
+        }
+    }
+}
